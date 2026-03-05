@@ -7,11 +7,11 @@ const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
 hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-
-    if (navMenu.classList.contains("open")) {
-        hamburger.textContent = "✖"; // close symbol
-    } else {
+    if (navMenu.style.display === "flex") {
+        navMenu.style.display = "none";
         hamburger.textContent = "☰"; // hamburger symbol
+    } else {
+        navMenu.style.display = "flex";
+        hamburger.textContent = "✖"; // close symbol
     }
 });

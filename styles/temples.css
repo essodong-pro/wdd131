@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 header {
@@ -25,30 +25,14 @@ nav {
     flex-direction: column;
 }
 
-nav.open {
-    display: flex;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    margin: 0.5rem 0;
-}
-
 nav a {
     color: white;
     padding: 0.5rem;
     text-decoration: none;
 }
 
-nav a:hover,
-nav a:focus {
+nav a:hover {
     background: #00695c;
-    outline: none;
 }
 
 main {
@@ -64,10 +48,8 @@ main {
 }
 
 figure img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
     border-radius: 8px;
-    display: block;
 }
 
 footer {
