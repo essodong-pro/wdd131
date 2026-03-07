@@ -7,11 +7,8 @@ const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
 hamburger.addEventListener("click", () => {
-    if (navMenu.style.display === "flex") {
-        navMenu.style.display = "none";
-        hamburger.textContent = "☰"; // hamburger symbol
-    } else {
-        navMenu.style.display = "flex";
-        hamburger.textContent = "✖"; // close symbol
-    }
+    const isOpen = navMenu.style.display === "block";
+    navMenu.style.display = isOpen ? "none" : "block";
+    hamburger.textContent = isOpen ? "☰" : "✖";
+    hamburger.setAttribute("aria-expanded", !isOpen);
 });
