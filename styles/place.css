@@ -1,0 +1,70 @@
+/* Global styles */
+:root {
+    --primary-color: #006400;
+    /* deep green */
+    --secondary-color: #ffffff;
+    /* white */
+    --accent-color: #ffcc00;
+    /* gold (flag colors) */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+header,
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+/* Sections stacked by default (mobile view) */
+main {
+    display: block;
+    padding: 1rem;
+}
+
+.data,
+.weather {
+    margin-bottom: 1.5rem;
+}
+
+/* Weather icon pseudo-element for larger view */
+.weather h2::after {
+    content: " ⛅";
+}
+
+/* Tablet/Desktop view: two-column layout */
+@media (min-width: 768px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* two equal columns */
+        grid-gap: 2rem;
+    }
+
+    .hero {
+        grid-column: 1 / 3;
+        /* hero spans both columns */
+    }
+
+    .data {
+        grid-column: 1;
+        /* left side */
+    }
+
+    .weather {
+        grid-column: 2;
+        /* right side */
+    }
+}

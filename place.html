@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Togo</title>
+    <meta name="description"
+        content="WDD 131 – Dynamic Web Fundamentals. Essodong N'GNAMA. A summary of web development fundamentals including HTML, CSS, and responsive design.">
+    <meta name="author" content="Essodong N'GNAMA">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Togo</h1>
+    </header>
+
+    <main>
+        <!-- Hero image -->
+        <section class="hero">
+            <picture>
+                <source srcset="images/togo-small.webp" media="(max-width: 600px)">
+                <source srcset="images/togo-medium.webp" media="(max-width: 1024px)">
+                <img src="images/togo-large.webp" alt="Scenery from Togo">
+            </picture>
+        </section>
+
+        <!-- Data section -->
+        <section class="data">
+            <h2>Data</h2>
+            <p>Area: 56,785 km²</p>
+            <p>Population: 8,500,000</p>
+            <p>Capital: Lomé</p>
+            <p>Language: French, Ewe, Kabye</p>
+            <p>Currency: West African CFA franc (XOF)</p>
+            <p>Time Zone: UTC+0</p>
+            <p>Calling Code: +228</p>
+            <p>Internet TLD: .tg</p>
+        </section>
+
+        <!-- Weather section -->
+        <section class="weather">
+            <h2>Weather</h2>
+            <p>Temperature: <span id="temp">30°C</span></p>
+            <p>Condition: Mostly Sunny <span class="icon">☀️</span></p>
+            <p>Wind: <span id="wind">12 km/h</span></p>
+            <p>Wind Chill: <span id="chill">N/A</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Essodong N'GNAMA – Togo</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+
+</html>
