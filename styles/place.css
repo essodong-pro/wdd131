@@ -1,11 +1,13 @@
 /* Global styles */
 :root {
     --primary-color: #006400;
-    /* deep green */
+    /* vert foncé */
     --secondary-color: #ffffff;
-    /* white */
+    /* blanc */
     --accent-color: #ffcc00;
-    /* gold (flag colors) */
+    /* jaune */
+    --highlight-color: #ff0000;
+    /* rouge */
 }
 
 body {
@@ -15,12 +17,15 @@ body {
     color: var(--primary-color);
 }
 
+/* Header et footer avec contraste fort */
 header,
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: var(--accent-color);
+    background-color: var(--highlight-color);
+    /* rouge */
     color: var(--secondary-color);
+    /* blanc */
 }
 
 .hero img {
@@ -28,7 +33,7 @@ footer {
     height: auto;
 }
 
-/* Sections stacked by default (mobile view) */
+/* Layout mobile par défaut : empilé */
 main {
     display: block;
     padding: 1rem;
@@ -37,34 +42,43 @@ main {
 .data,
 .weather {
     margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 2px solid var(--accent-color);
+    /* jaune */
+    border-radius: 8px;
+    background-color: var(--secondary-color);
+    /* blanc */
+    color: var(--primary-color);
+    /* vert foncé */
 }
 
-/* Weather icon pseudo-element for larger view */
+/* Icône météo pseudo-élément pour large view */
 .weather h2::after {
     content: " ⛅";
+    color: var(--accent-color);
 }
 
-/* Tablet/Desktop view: two-column layout */
+/* Tablet/Desktop view : deux colonnes */
 @media (min-width: 768px) {
     main {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        /* two equal columns */
+        /* deux colonnes égales */
         grid-gap: 2rem;
     }
 
     .hero {
         grid-column: 1 / 3;
-        /* hero spans both columns */
+        /* hero occupe toute la largeur */
     }
 
     .data {
         grid-column: 1;
-        /* left side */
+        /* colonne gauche */
     }
 
     .weather {
         grid-column: 2;
-        /* right side */
+        /* colonne droite */
     }
 }
