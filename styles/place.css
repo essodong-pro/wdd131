@@ -6,8 +6,8 @@
     /* blanc */
     --accent-color: #ffcc00;
     /* jaune */
-    --highlight-color: #ff0000;
-    /* rouge */
+    --highlight-color: #b30000;
+    /* rouge foncé pour contraste */
 }
 
 body {
@@ -23,9 +23,15 @@ footer {
     text-align: center;
     padding: 1rem;
     background-color: var(--highlight-color);
-    /* rouge */
+    /* rouge foncé */
     color: var(--secondary-color);
     /* blanc */
+}
+
+/* Footer spans : texte blanc et gras pour lisibilité */
+footer span {
+    color: var(--secondary-color);
+    font-weight: bold;
 }
 
 .hero img {
