@@ -81,7 +81,7 @@ function displayTemples(filteredTemples) {
     filteredTemples.forEach(t => {
         const card = document.createElement("figure");
         card.innerHTML = `
-      <img src="${t.imageUrl}" alt="${t.templeName}" loading="lazy">
+      <img src="${t.imageUrl}" alt="${t.templeName}" loading="lazy" width="400" height="250">
       <figcaption>
         <h3>${t.templeName}</h3>
         <p>Location: ${t.location}</p>
