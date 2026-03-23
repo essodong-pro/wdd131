@@ -28,8 +28,15 @@ header h1 {
 }
 
 /* Navigation */
+
 nav {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+nav.open {
+    max-height: 300px;
 }
 
 nav ul {
@@ -99,7 +106,22 @@ footer {
 
 @media (min-width: 768px) {
     nav {
-        display: flex !important;
+        max-height: none;
+            overflow: visible;
+            display: block;
+        }
+        
+        nav ul {
+            flex-direction: row;
+            gap: 1rem;
+        }
+        
+        #hamburger {
+            display: none;
+        }
+        
+        .album {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     nav ul {
@@ -114,4 +136,12 @@ footer {
     .album {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+}
+
+.album {
+    min-height: 800px;
+}
+
+.album figure {
+    min-height: 320px;
 }
