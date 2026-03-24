@@ -49,7 +49,6 @@ const temples = [
         area: 116642,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    // Extra temples
     {
         templeName: "Accra Ghana",
         location: "Accra, Ghana",
@@ -78,10 +77,14 @@ const container = document.getElementById("templeCards");
 
 function displayTemples(filteredTemples) {
     container.innerHTML = "";
-    filteredTemples.forEach(t => {
+    filteredTemples.forEach((t, index) => {
         const card = document.createElement("figure");
         card.innerHTML = `
-      <img src="${t.imageUrl}" alt="${t.templeName}" loading="lazy" width="400" height="250">
+      <img src="${t.imageUrl}" 
+           alt="${t.templeName}" 
+           ${index === 0 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} 
+           decoding="async"
+           width="400" height="250">
       <figcaption>
         <h3>${t.templeName}</h3>
         <p>Location: ${t.location}</p>
@@ -120,11 +123,7 @@ const hamburger = document.getElementById("hamburger");
 const navMenu = document.getElementById("navMenu");
 
 hamburger.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-});
-hamburger.addEventListener("click", () => {
-    const isOpen = navMenu.style.display === "block";
-    navMenu.style.display = isOpen ? "none" : "block";
-    hamburger.textContent = isOpen ? "☰" : "✖";
-    hamburger.setAttribute("aria-expanded", !isOpen);
+    const isOpen = navMenu.classList.toggle("open");
+    hamburger.textContent = isOpen ? "✖" : "☰";
+    hamburger.setAttribute("aria-expanded", isOpen);
 });
