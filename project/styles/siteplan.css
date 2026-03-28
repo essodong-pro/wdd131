@@ -1,0 +1,32 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #006400;
+    /* Dark Green */
+}
+
+header,
+footer {
+    background-color: #FFD700;
+    /* Gold */
+    color: black;
+    padding: 1rem;
+    text-align: center;
+}
+
+.color-sample.green {
+    color: #006400;
+    font-weight: bold;
+}
+
+.color-sample.gold {
+    color: #FFD700;
+    font-weight: bold;
+}
