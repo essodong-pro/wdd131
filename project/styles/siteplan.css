@@ -20,8 +20,8 @@ header,
 footer {
     background-color: #FFD700;
     /* gold */
-    color: #222;
-    /* dark gray */
+    color: #000000;
+    /* black */
     padding: 1rem;
     text-align: center;
 }
@@ -33,7 +33,14 @@ footer {
 }
 
 .color-sample.gold {
-    color: #b89600;
-    /* dark gold */
+    color: #826a00;
+    /* deep gold */
     font-weight: bold;
+}
+
+header a,
+footer a {
+    color: #000000;
+    /* black */
+    text-decoration: underline;
 }
