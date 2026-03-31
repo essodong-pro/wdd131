@@ -1,34 +1,29 @@
-// Product Array
 const products = [
-    { id: "fc-1888", name: "flux capacitor", averagerating: 4.5 },
-    { id: "fc-2050", name: "power laces", averagerating: 4.7 },
-    { id: "fs-1987", name: "time circuits", averagerating: 3.5 },
-    { id: "ac-2000", name: "low voltage reactor", averagerating: 3.9 },
-    { id: "jj-1969", name: "warp equalizer", averagerating: 5.0 }
+    { id: "fc-1888", name: "flux capacitor" },
+    { id: "fc-2050", name: "power laces" },
+    { id: "fs-1987", name: "time circuits" },
+    { id: "ac-2000", name: "low voltage reactor" },
+    { id: "jj-1969", name: "warp equalizer" }
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Populate product select options
     const productSelect = document.getElementById("product");
 
-    // Safety check to ensure select exists
     if (productSelect) {
+        const fragment = document.createDocumentFragment();
         products.forEach(product => {
             const option = document.createElement("option");
             option.value = product.id;
             option.textContent = product.name;
-            productSelect.appendChild(option);
+            fragment.appendChild(option);
         });
+        productSelect.appendChild(fragment);
     }
 
-    // Footer dynamic year and last modified
-    const yearElement = document.getElementById("year");
-    const lastModifiedElement = document.getElementById("lastModified");
+    // Footer
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
-    if (lastModifiedElement) {
-        lastModifiedElement.textContent = document.lastModified;
-    }
+    const lastMod = document.getElementById("lastModified");
+    if (lastMod) lastMod.textContent = document.lastModified;
 });
