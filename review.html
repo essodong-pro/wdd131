@@ -5,17 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Review Confirmation</title>
-    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Review Submitted</h1>
-    </header>
-
-    <main>
-        <p>Thank you for submitting your review!</p>
-    </main>
+    <h1>Thank You!</h1>
+    <p>Your review has been submitted successfully.</p>
+    <p>Total Reviews Submitted: <span id="reviewCount"></span></p>
 
     <footer>
         <p>&copy; <span id="year"></span> Essodong N'GNAMA – Togo</p>
@@ -23,11 +19,15 @@
     </footer>
 
     <script>
-        // Increment review counter in localStorage
+        // Increment review counter
         let count = localStorage.getItem("reviewCount") || 0;
         count++;
         localStorage.setItem("reviewCount", count);
-        console.log("Total reviews submitted:", count);
+        document.getElementById("reviewCount").textContent = count;
+
+        // Footer dynamic year and last modified
+        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("lastModified").textContent = document.lastModified;
     </script>
 </body>
 

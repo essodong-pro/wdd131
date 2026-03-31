@@ -1,38 +1,65 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 1rem;
-    background-color: #ffffff;
-    /* white */
-    color: #222;
-    /* dark gray */
-}
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    color: #004d00;
-    /* dark green */
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
 }
 
 form {
     max-width: 600px;
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fdfdfd;
 }
 
 label,
 legend {
+    display: block;
+    margin-top: 10px;
     font-weight: bold;
 }
 
-input[type="submit"] {
-    background-color: #FFD700;
-    /* gold */
-    color: #000000;
-    /* black */
-    padding: 0.5rem 1rem;
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.submit-btn {
+    margin-top: 15px;
+    background: #888;
+    color: white;
     border: none;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.submit-btn:hover {
+    background: #666;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        padding: 10px;
+    }
 }
