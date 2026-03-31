@@ -29,7 +29,7 @@ form {
     border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: var(--bg-color);
 }
 
 label {
@@ -70,7 +70,7 @@ fieldset label {
 
 .submit-btn {
     background-color: var(--accent-color);
-    color: white;
+    color: var(--bg-color);
     padding: 15px;
     border: none;
     border-radius: 4px;
@@ -82,4 +82,17 @@ fieldset label {
 
 .submit-btn:hover {
     background-color: #003366;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    form {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+        padding: 12px;
+    }
 }
