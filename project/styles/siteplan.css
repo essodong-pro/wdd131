@@ -1,3 +1,4 @@
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
@@ -13,8 +14,35 @@ body {
     padding: 0;
     color: #222;
     background-color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for dark mode */
 }
 
+/* --- Dark Mode Variables --- */
+body.dark {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: #4caf50;
+    /* Brighter green for dark background */
+}
+
+body.dark header,
+body.dark footer {
+    background-color: #333;
+    color: #FFD700;
+}
+
+body.dark header a,
+body.dark footer a {
+    color: #FFD700;
+}
+
+/* --- Typography --- */
 h1,
 h2,
 h3 {
@@ -23,6 +51,7 @@ h3 {
     margin-top: 0;
 }
 
+/* --- Header & Navigation --- */
 header,
 footer {
     background-color: #FFD700;
@@ -31,11 +60,84 @@ footer {
     text-align: center;
 }
 
-header a,
-footer a {
-    color: #000000;
-    text-decoration: underline;
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
+
+nav a {
+    font-weight: bold;
+    text-decoration: none !important;
+   
+    color: inherit;
+}
+
+nav a:hover {
+    text-decoration: underline !important;
+}
+
+/* --- Main Content --- */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    /* Centers the content on large screens */
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #004d00;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #007a00;
+}
+
+/* --- Gallery & Media --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+   
+    margin: 10px 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
 
 .color-sample.green {
     color: #004d00;
@@ -45,23 +147,4 @@ footer a {
 .color-sample.gold {
     color: #826a00;
     font-weight: bold;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-main {
-    flex: 1;
-    padding: 1rem;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-section.gallery {
-    content-visibility: auto;
 }
